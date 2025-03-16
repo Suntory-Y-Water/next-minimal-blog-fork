@@ -1,4 +1,3 @@
-import type { TechIcons } from '@/components/icons';
 import { AuthorConfig } from '@/types';
 
 export const author: AuthorConfig = {
@@ -10,15 +9,14 @@ export const author: AuthorConfig = {
 
 export const postsPerPage = 5;
 
-export const tags: Record<
-  string,
-  { name: string; icon: keyof typeof TechIcons }
-> = {
-  eslint: { name: 'ESLint', icon: 'eslint' },
-  jamstack: { name: 'Jamstack', icon: 'jamstack' },
-  nextjs: { name: 'Next.js', icon: 'nextjs' },
-  react: { name: 'react', icon: 'react' },
-  typescript: { name: 'TypeScript', icon: 'typescript' },
-  wordpress: { name: 'WordPress', icon: 'wordpress' },
-  vercel: { name: 'vercel', icon: 'vercel' },
+// TODO: generateStaticParams()で使用されているtagsをどうにかしてmdxから取得できないか
+export const tags: Record<string, { name: string }> = {
+  eslint: { name: 'ESLint' },
+  jamstack: { name: 'Jamstack' },
+  nextjs: { name: 'Next.js' },
+  react: { name: 'react' },
+  typescript: { name: 'TypeScript' },
+  wordpress: { name: 'WordPress' },
+  vercel: { name: 'vercel' },
+  python: { name: 'Python' },
 };

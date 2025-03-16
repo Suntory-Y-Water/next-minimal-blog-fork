@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Icons, TechIcons } from '@/components/icons';
+import { Icons } from '@/components/icons';
 import { BlogPost } from '@/lib/mdx';
 import { formatDate } from '@/lib/utils';
 
@@ -10,16 +10,15 @@ interface BlogCardProps {
 
 export function BlogCard({ data }: BlogCardProps) {
   const { metadata, slug } = data;
-  const Icon = TechIcons[metadata.icon ?? 'default'];
 
   return (
     <Link
       href={`/blog/${slug}`}
       className="group relative flex items-start gap-4 overflow-hidden rounded-lg border border-border bg-card p-5 shadow-sm transition-all hover:bg-accent/5 hover:shadow-md"
     >
-      {/* Eyecatch (TechIcon) */}
-      <div className="size-16 flex-shrink-0 rounded-lg bg-[#F3F4F6] p-4 transition-colors group-hover:bg-muted/70">
-        <Icon className="size-8 text-primary transition-colors group-hover:text-primary/80" />
+      {/* Icon */}
+      <div className="flex flex-col items-center justify-center rounded-3xl p-4 text-4xl">
+        {metadata.icon}
       </div>
 
       {/* Content */}

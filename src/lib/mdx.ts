@@ -2,7 +2,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import type { TechIcons } from '@/components/icons';
 import type { Frontmatter, MDXData } from '@/types/mdx';
 
 const blogDir = path.join(process.cwd(), 'src', 'content', 'blog');
@@ -10,7 +9,7 @@ const blogDir = path.join(process.cwd(), 'src', 'content', 'blog');
 export type BlogPost = MDXData<{
   thumbnail?: string;
   tags?: string[];
-  icon?: keyof typeof TechIcons;
+  icon?: string;
 }>;
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
